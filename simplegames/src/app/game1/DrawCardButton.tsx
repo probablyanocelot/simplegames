@@ -1,6 +1,8 @@
 "use client"
 import Image from "next/image";
 import React, { useState } from 'react';
+import { Button } from "@/components/ui/button"
+
 
 import {
   Card,
@@ -44,22 +46,25 @@ export function DrawCardButton() {
 
   return (
     <div>
-      <button onClick={drawCard}>Draw Card</button>
-      <div className="cards">
+      <div className="flex items-center justify-center">
+      <Button className="mb-10" variant={"secondary"} onClick={drawCard}>Draw Card</Button>
+      </div>
+      <div className="flex justify-center gap-4">
         {drawnCards.map((card, index) => (
-          <Card key={index}>
+          <Card className="w-80" key={index}>
+            <div className="flex flex-col align-center items-center justify-center">
             <CardHeader>
                 <CardTitle>{card || "Card Title"}</CardTitle>
                 {/* <CardDescription>{cardDescription}</CardDescription> */}
             </CardHeader>
                 <CardContent>
-                    <Image src="/image.png" alt="image" width={200} height={200} />
+                    <Image src={`/${card.replace(/\s+/g, '_')}.png`} alt={card} width={200} height={200} />
                 </CardContent>
                 <CardFooter>
                     {/* <p>Card Footer</p> */}
-                    <CardDescription>{cards[card] || "Card Description"}</CardDescription>
+                    <CardDescription className="text-center text-pretty">{cards[card] || "Card Description"}</CardDescription>
                 </CardFooter>
-            
+            </div>
             {/* <h3>{card}</h3> */}
             {/* <p>{cards[card]}</p> */}
           </Card>
