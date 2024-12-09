@@ -1,9 +1,9 @@
 import '../style.css'
 
 import Image from 'next/image'
-import { DrawCardButton } from './DrawCardButton';
 import { cookies } from 'next/headers';
 import NavigationButtons from '../nav-buttons';
+import { DiceRoller } from './dice';
 
 export default async function Home() {
     const cookieStore = await cookies();
@@ -12,17 +12,16 @@ export default async function Home() {
     return (
         <div className="content bg-scroll bg-cover"
             style={{
-                backgroundImage: `url(${"cloth.png"})`,
+                backgroundImage: `url(${"poker-table.png"})`,
                 backgroundSize: 'fill',
             }}
         >
-            <div className="flex flex-col mb-10 shrink-0 items-center" >
+            <div className="flex flex-col mb-10 pb-10 items-center content-center" >
                 <h1 className="text-9xl mb-3 text-white">Hello, {username}!</h1>
-                <h2 className="text-5xl text-white">Do You Dare Test Fate?</h2>
+                <h2 className="text-5xl text-white">Care To Roll The Dice?</h2>
             </div>
 
-            <DrawCardButton />
-
+            <DiceRoller />
             <NavigationButtons />
 
         </div>
