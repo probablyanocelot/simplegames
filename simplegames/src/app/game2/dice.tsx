@@ -2,6 +2,12 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 
+/**
+ * Component to roll a dice and display the results.
+ *
+ * @export
+ * @returns {*}
+ */
 export function DiceRoller() {
   const [diceResults, setDiceResults] = useState<number[]>([]);
   const [total, setTotal] = useState<number>(0);

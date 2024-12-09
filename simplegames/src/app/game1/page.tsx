@@ -5,6 +5,13 @@ import { DrawCardButton } from './DrawCardButton';
 import { cookies } from 'next/headers';
 import NavigationButtons from '../nav-buttons';
 
+/**
+ * Generates the home page for the tarot card game. Uses cookies to display the user's name.
+ *
+ * @export
+ * @async
+ * @returns {unknown}
+ */
 export default async function Home() {
     const cookieStore = await cookies();
     const username = cookieStore.get('username')?.value || 'Guest';

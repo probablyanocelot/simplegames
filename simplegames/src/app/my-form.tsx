@@ -24,6 +24,12 @@ const formSchema = z.object({
   }),
 })
 
+/**
+ * Creates and validates a form for the user to input their username.
+ *
+ * @export
+ * @returns {*}
+ */
 export function ProfileForm() {
     // 1. Define your form.
     const form = useForm<z.infer<typeof formSchema>>({

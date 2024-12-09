@@ -13,6 +13,11 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
+/**
+ * A dictionary of tarot card names and their descriptions.
+ *
+ * @type {{ 'The Fool': string; 'The Magician': string; 'The High Priestess': string; 'The Empress': string; 'The Emperor': string; 'The Hierophant': string; 'The Lovers': string; 'The Chariot': string; Strength: string; 'The Hermit': string; 'Wheel of Fortune': string; Justice: string; 'The Hanged Man': string; }}
+ */
 const cards = {
   'The Fool': 'A card representing new beginnings, having faith in the future, and being inexperienced.',
   'The Magician': 'A card representing skill, logic, and intellect.',
@@ -31,6 +36,12 @@ const cards = {
 
 const cardNames = Object.keys(cards);
 
+/**
+ * Draw Card Button component. Draws a random tarot card up to four times.
+ *
+ * @export
+ * @returns {*}
+ */
 export function DrawCardButton() {
   const [drawnCards, setDrawnCards] = useState<string[]>([]);
 

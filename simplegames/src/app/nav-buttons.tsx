@@ -5,6 +5,12 @@ import { Button } from "@/components/ui/button"
 
 
 
+/**
+ * Puts navigation bars on the top of the page
+ *
+ * @export
+ * @returns {*}
+ */
 export function NavigationButtons() {
 
   return (
